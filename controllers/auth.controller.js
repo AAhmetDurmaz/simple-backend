@@ -7,7 +7,6 @@ const User = require('../model/User');
 exports.register = async (req, res, next) => {
   try {
     const { name, username, email, password } = req.body;
-    console.log(req.body)
     if (!(name && username && email && password)) {
       return res.status(400).json({ message: 'Missing parameter.' })
     }

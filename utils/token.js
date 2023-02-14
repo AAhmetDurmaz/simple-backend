@@ -10,10 +10,14 @@ const CreateToken = (UserData) => {
   return token;
 }
 
-const GetUser = (token) => {
+function GetToken(req) {
+  return req.headers.authorization.split(' ')[1].toString();
+}
+
+function GetUser(token) {
   const UserData = jwt.verify(token, JWT_TOKEN);
   delete UserData.password;
   return UserData;
 }
 
-module.exports = { CreateToken, GetUser }
+module.exports = { CreateToken, GetUser, GetToken }
