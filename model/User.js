@@ -8,7 +8,8 @@ const UserSchema = new mongoose.Schema(
     password: { type: String, required: true },
   },
   {
-    timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
+    timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
+    versionKey: false
   }
 );
 

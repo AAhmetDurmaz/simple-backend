@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 // Import routes.
 const AuthRoutes = require('./router/auth.routes');
 const BlogRoutes = require('./router/blog.routes');
+const CommentRoutes = require('./router/comment.routes');
 const OtherRoutes = require('./router/other.routes');
 
 const { API_PORT, APP_NAME } = process.env;
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 
 app.use(AuthRoutes);
 app.use('/blog/', BlogRoutes);
+app.use('/comment/', CommentRoutes);
 app.use(OtherRoutes);
 
 app.use((req, res) => {
